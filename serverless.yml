@@ -8,9 +8,15 @@ provider:
   runtime: python3.9
 
 functions:
-  hello:
-    handler: handler.hello
+  hours:
+    handler: handler.hours
     events:
       - httpApi:
-          path: /
+          path: /hours
+          method: get
+  days:
+    handler: handler.days
+    events:
+      - httpApi:
+          path: /days
           method: get
