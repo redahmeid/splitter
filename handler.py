@@ -6,9 +6,10 @@ def hello(event, context):
     query_parameters = event["queryStringParameters"] if 'queryStringParameters' in event else None
     print(query_parameters)
     value = query_parameters["value"] if query_parameters is not None and 'value' in query_parameters else None
-    
+    hours = ''
+    if(value!=''): hours = convert_to_hours(value)
 
-    response = {"statusCode": 200, "body": json.dumps(convert_to_hours(value))}
+    response = {"statusCode": 200, "body": json.dumps(hours)}
 
     return response
 
