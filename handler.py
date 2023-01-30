@@ -3,7 +3,6 @@ import json
 
 def hello(event, context):
 
-    body =json.loads(event["body"])
     query_parameters = event["queryStringParameters"] if 'queryStringParameters' in event else None
     print(query_parameters)
     value = query_parameters["value"] if query_parameters is not None and 'starting_term' in query_parameters else None
