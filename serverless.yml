@@ -20,15 +20,3 @@ functions:
       - httpApi:
           path: /days
           method: get
-plugins:
-  - serverless-python-requirements
- 
-custom:
-  pythonRequirements:
-    dockerizePip: non-linux
-    
-
-package:
-  patterns:
-    - '!node_modules/**'
-    - '!venv/**'
